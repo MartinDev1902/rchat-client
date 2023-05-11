@@ -4,18 +4,16 @@ import Button from "../../components/Button/Button";
 import styles from './SignUp.module.sass'
 import {Link} from "react-router-dom";
 import {useForm} from "react-hook-form";
+import {useDispatch} from "react-redux";
+import {registerUser} from "../../store/reducers/auth";
+
 const SignUp = () => {
-
     const {register, handleSubmit, formState: {errors}} = useForm();
-
-    const onSubmit = data => {
-        console.log(data)
-        //TODO: Send data to the server
-    }
+    const dispatch = useDispatch()
 
     return(
         <AuthLayout pageTitle={'Sign up'}>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleSubmit(data => dispatch(registerUser(data)))}>
                 <Input name="firstName" errors={errors["firstName"]} register={register("firstName", {required: "Это поле обязательное", minLength: {value: 2, message: "Значение должно быть не меньше 2 символов"}})} label="First name" type="text" placeholder="John"/>
                 <Input name="lastName" errors={errors["lastName"]} register={register("lastName", {required: "Это поле обязательное", minLength: {value: 2, message: "Значение должно быть не меньше 2 символов"}})} label="Last name" type="text" placeholder="Doe"/>
                 <Input label="Email" errors={errors['email']} type="email" placeholder="example@gmail.com" register={register("email", {required: 'Это поле обязательное'})} name="email"/>
@@ -25,9 +23,7 @@ const SignUp = () => {
                            minLength: {value: 8, message: "Пароль должен быть больше 8 символов"}
                        })} name="password"/>
                 <div style={{marginTop: 30}}><Button>Sign up</Button></div>
-                <div className={styles.link}>
-                    Already have an account? <Link to="/login">Login</Link>
-                </div>
+                <div className={styles.link}>Already have an account? <Link to="/login">Login</Link></div>
             </form>
         </AuthLayout>
     )

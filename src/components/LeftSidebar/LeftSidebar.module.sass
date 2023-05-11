@@ -1,0 +1,34 @@
+@import '../../styles/constants'
+
+.leftSidebar
+  background-color: $whiteColor
+  width: 350px
+  height: 100%
+  overflow-y: scroll
+  border-right: 1px solid $borderColor
+
+.leftSidebarHeader
+  padding: 15px
+  display: flex
+  align-items: center
+  justify-content: space-between
+  margin-bottom: 20px
+
+.search
+  padding: 0 15px
+  input
+    width: 100%
+    height: 40px
+    padding: 0 15px
+    border-radius: 5px
+    border: 1px solid $borderColor
+    font-weight: 200
+    font-style: italic
+    color: $lightTextColor
+    &::placeholder
+      color: $lightTextColor
+
+.chatList
+  margin-top: 20px
+
+

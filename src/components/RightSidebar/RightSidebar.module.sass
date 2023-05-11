@@ -1,0 +1,89 @@
+@import '../../styles/constants'
+
+.rightSidebar
+  background-color: $whiteColor
+  width: 350px
+  overflow-y: scroll
+  border-left: 1px solid $borderColor
+  padding: 50px 15px 0
+  display: flex
+  flex-direction: column
+  align-items: center
+
+.rightSidebarName
+  font-size: 16px
+  font-weight: 600
+  margin-top: 25px
+
+.rightSidebarContact
+  font-style: italic
+  color: $lightTextColor
+  margin-top: 10px
+
+.rightSidebarLocation
+  font-weight: 500
+  color: $lightTextColor
+  margin-top: 10px
+
+.rightSidebarStatus
+  font-style: italic
+  color: $lightTextColor
+  margin-top: 10px
+  text-align: center
+
+.rightSidebarSocial
+  width: 100%
+  margin-top: 40px
+  & > div
+    font-size: 16px
+    font-weight: 600
+  ul
+    margin-top: 20px
+    display: flex
+    align-items: center
+    flex-wrap: wrap
+    li
+      margin-right: 20px
+      margin-bottom: 30px
+      &:last-child
+        margin-right: 0
+      a
+        font-style: italic
+        color: $primaryColor
+        background-color: rgba($primaryColor, 0.2)
+        padding: 6px 10px
+        border-radius: 15px
+
+.rightSidebarInterests
+  width: 100%
+  margin-top: 10px
+  & > div
+    font-size: 16px
+    font-weight: 600
+  ul
+    margin-top: 20px
+    display: flex
+    align-items: center
+    flex-wrap: wrap
+    li
+      margin-right: 20px
+      margin-bottom: 30px
+      &:last-child
+        margin-right: 0
+      a
+        font-style: italic
+        color: $successColor
+        background-color: rgba($successColor, 0.2)
+        padding: 6px 10px
+        border-radius: 15px
+
+
+
+
+
+
+
+
+
+
+

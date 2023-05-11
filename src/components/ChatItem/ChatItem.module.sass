@@ -1,0 +1,32 @@
+@import '../../styles/constants'
+
+.chatItem
+  border-bottom: 1px solid $borderColor
+  padding: 15px
+  display: flex
+  align-items: center
+  justify-content: space-between
+  &:hover
+    cursor: pointer
+    background-color: rgba($borderColor, 0.2)
+
+.chatItemContent
+  flex-grow: 1
+  padding-left: 15px
+  color: $textColor
+
+.userName
+  font-size: 16px
+  font-weight: 600
+
+.message
+  font-style: italic
+  margin-top: 2px
+  color: $lightTextColor
+  font-weight: 300
+
+.indicator
+  width: 10px
+  height: 10px
+  border-radius: 50%
+  background-color: $successColor
