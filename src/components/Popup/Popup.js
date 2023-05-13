@@ -4,8 +4,11 @@ import ChangePasswordTab from "../SettingTabs/ChangePasswordTab";
 import SocialMediasTab from "../SettingTabs/SocialMediasTab";
 import InterestsTab from "../SettingTabs/InterestsTab";
 import {useState} from "react";
+import {useDispatch} from "react-redux";
+import {authLogout, logoutUser} from "../../store/reducers/auth";
 const Popup = ({closePopup}) => {
     const [activeTab, setActiveTab] = useState('profileInfo');
+    const dispath = useDispatch()
 
     return(
         <div className={styles.popup}>
@@ -17,6 +20,7 @@ const Popup = ({closePopup}) => {
                         <li onClick={() => setActiveTab('changePassword')}>Change password</li>
                         <li onClick={() => setActiveTab('socialMedias')}>Social medias</li>
                         <li onClick={() => setActiveTab('interests')}>Interests</li>
+                        <li onClick={() => dispath(authLogout())}>LogOut</li>
                     </ul>
                 </div>
                 <div className={styles.popupContent}>

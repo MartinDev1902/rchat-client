@@ -1,9 +1,11 @@
 import axios from '../config/axios'
-import {loginUrl, signupUrl} from "./urls";
+import {loginUrl, refreshTokenUrl, signupUrl} from "./urls";
 
-
-export default {
+const userApi = {
     register: data => axios.post(signupUrl, data),
     saveUserData: data => axios.post('users.json', data),
-    loginUser: data => axios.post(loginUrl, data)
+    loginUser: data => axios.post(loginUrl, data),
+    refreshToken: data => axios.post(refreshTokenUrl, data)
 }
+
+export default userApi

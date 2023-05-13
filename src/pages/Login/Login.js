@@ -4,20 +4,20 @@ import Input from "../../components/Input/Input";
 import Button from "../../components/Button/Button";
 import {Link} from "react-router-dom";
 import {useForm} from "react-hook-form";
+import {useDispatch} from "react-redux";
+import {loginUser} from "../../store/reducers/auth";
 
 const Login = () => {
 
     const {register, handleSubmit, formState: {errors}} = useForm();
+    const dispatch = useDispatch()
 
-    const onSubmit = data => {
-        console.log(data)
-        // TODO: Send data to server
-    }
+
 
     return (
         <AuthLayout pageTitle={'Login'}>
 
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleSubmit(data =>  dispatch(loginUser({...data, returnSecureToken: true})))}>
 
                 <Input label="Email" errors={errors['email']} type="email" placeholder="example@gmail.com"
                        register={register("email", {required: 'Это поле обязательное'})} name="email"/>

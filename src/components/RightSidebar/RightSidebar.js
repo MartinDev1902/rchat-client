@@ -3,7 +3,6 @@ import Avatar from "../Avatar/Avatar";
 
 const RightSidebar = ({chatID}) => {
     const image = 'https://ichef.bbci.co.uk/news/976/cpsprodpb/153FD/production/_126973078_whatsubject.jpg'
-    console.log(chatID)
     return (
         <div className={styles.rightSidebar}>
             <Avatar image={image} alt={'Elon Musk'} size="big"/>
